@@ -47,9 +47,12 @@ namespace pcl
 {
   namespace device
   {
-    //texture<int, 1, cudaReadModeElementType> edgeTex;
-    texture<int, 1, cudaReadModeElementType> triTex;
-    texture<int, 1, cudaReadModeElementType> numVertsTex;
+    // //texture<int, 1, cudaReadModeElementType> edgeTex;
+    //texture<int, 1, cudaReadModeElementType> triTex;
+    //texture<int, 1, cudaReadModeElementType> numVertsTex;
+
+    __constant__ cudaTextureObject_t triTex;
+    __constant__ cudaTextureObject_t numVertsTex;
   }
 }
 
