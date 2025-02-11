@@ -15,12 +15,14 @@ endif()
 
 if(CMAKE_CXX_STANDARD MATCHES "14")
   # Optional boost modules
-  set(BOOST_OPTIONAL_MODULES serialization mpi)
+  #set(BOOST_OPTIONAL_MODULES serialization mpi)  # There is a bug with FindMPI.cmake
+  set(BOOST_OPTIONAL_MODULES serialization)
   # Required boost modules
   set(BOOST_REQUIRED_MODULES filesystem iostreams system)
 else()
   # Optional boost modules
-  set(BOOST_OPTIONAL_MODULES filesystem serialization mpi)
+  #set(BOOST_OPTIONAL_MODULES filesystem serialization mpi)    # There is a bug with FindMPI.cmake
+  set(BOOST_OPTIONAL_MODULES filesystem serialization)
   # Required boost modules
   set(BOOST_REQUIRED_MODULES iostreams system)
 endif()
